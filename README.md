@@ -1,4 +1,4 @@
-### Final Product
+## Final Product
 ![alt text](/carousels.png)
 ![alt text](/upload.png)
 ![alt text](/filter.png)
