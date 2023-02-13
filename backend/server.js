@@ -15,7 +15,9 @@ const app = express()
 // middleware
 app.use(express.json())
 app.use(cors())
-app.use(helmet())
+app.use(helmet({
+    crossOriginResourcePolicy: false,
+}))
 
 app.use((req, res, next) => {
     console.log(req.path, req.method)
@@ -23,7 +25,8 @@ app.use((req, res, next) => {
 })
 
 // routes
-app.use('/videos', videoRoutes)
+app.use('/', videoRoutes)
+app.use('/uploads', express.static('uploads'))
 
 // connect to db
 mongoose.connect(MONG_URI)

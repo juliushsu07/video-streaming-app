@@ -12,18 +12,28 @@ code {
     monospace;
 }
 
-.nav {
-  background-color: #333;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  gap: 2rem;
-  padding: 0 1rem;
+ul{
+  list-style-type: none;
 }
 
-.links {
-  font-size: 1rem;
+.nav {
+  overflow: hidden;
+  background-color: #e9e9e9;
+}
+
+.nav-item {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.nav-item:hover {
+  background-color: #ddd;
+  color: black;
 }
 
 .nav ul {
@@ -34,15 +44,56 @@ code {
   gap: 1rem;
 }
 
-.nav a {
-  color: inherit;
-  text-decoration: none;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  padding: .25rem;
+.search-bar {
+  float: right;
 }
 
-.nav .links:hover {
-  background-color: #777;
+.search-bar button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.search-bar input {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.home-container {
+  padding-top: 5rem;
+  text-align: center;
+}
+
+.upload-video-container {
+  padding-top: 5rem;
+  text-align: center;
+}
+
+.dropzone:hover {
+  cursor: pointer;
+}
+
+.btn {
+  margin-top: 2rem;
+}
+.btn{
+  width: max-content;
+  display: inline-block;
+  transition: var(--transition);
+  padding: 0.75rem 1.2rem;
+  border: 2px solid ;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #868e96;
+  cursor: pointer;
 }

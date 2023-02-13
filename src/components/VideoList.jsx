@@ -1,17 +1,18 @@
 import React from 'react'
 import VideoDetail from "./VideoDetail"
 
-const VideoList = () => {
+const VideoList = ({videos}) => {
+  // console.log(videos)
   return (
     <div className='video-list-container'>
         <section className=''>
-            Now Playing
+          
         </section>
         <section className=''>
             <ul>
-                <li><VideoDetail/></li>
-                <li><VideoDetail/></li>
-                <li><VideoDetail/></li>
+            {videos && videos.map(video => (
+              <VideoDetail key={video._id} video={video}/>
+            ))}
             </ul>
         </section>
     </div>

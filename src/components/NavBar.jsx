@@ -2,16 +2,16 @@ import React from 'react'
 import SearchBar from "./SearchBar"
 import { Link } from "react-router-dom"
 
-const NavBar = () => {
+const NavBar = ({videos}) => {
   return (
     <nav className="nav">
-      <Link to="/" className="links">
+      <Link to="/" className="nav-item">
         Eon Media Streaming
       </Link>  
-      <SearchBar />
-      <Link to="/upload" className="links">
+      <Link to="/upload" className="nav-item">
         Upload Video
       </Link>
+      <SearchBar className="nav-item"/>
     </nav>
   )
 }

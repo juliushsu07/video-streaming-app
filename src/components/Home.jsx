@@ -1,11 +1,12 @@
-import { React, useEffect} from 'react'
+import { React } from 'react'
 import VideoList from "./VideoList"
 
-const Home = () => {
+
+const Home = ({videos}) => {
   return (
-    <>
-      <VideoList></VideoList>
-    </>
+    <div className='home-container'>
+      <VideoList videos={videos}></VideoList>
+    </div>
   )
 }
 

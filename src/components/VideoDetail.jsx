@@ -1,10 +1,11 @@
 import React from 'react'
 
-const VideoDetail = () => {
+const VideoDetail = ({video}) => {
   return (
-    <>
-      Video
-    </>
+    <li>
+      <p>{video.title}</p>
+      <img src={`http://localhost:4000/${video.thumbnail}`}></img>
+    </li>
   )
 }
 
