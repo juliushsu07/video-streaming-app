@@ -54,7 +54,7 @@ const uploadThumbnail = async (req, res) => {
     return res.json({success: true, thumbsFilePath: thumbsFilePath , fileDuration: fileDuration})
   })
   .screenshots({
-    count: 3,
+    count: 1,
     folder: 'uploads/thumbnails',
     size:'320x240',
     fileName: 'thumbnail-%i-%s-%b.png'

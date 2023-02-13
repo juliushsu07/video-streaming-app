@@ -1,8 +1,16 @@
-import React from 'react'
-import SearchBar from "./SearchBar"
+import {React, useState, useRef} from 'react'
 import { Link } from "react-router-dom"
 
-const NavBar = ({videos}) => {
+const NavBar = ({searchTerm, setSearchTerm}) => {
+  const searchTermRef = useRef(undefined);
+  
+  const onChange = (e) => {
+    setSearchTerm(e.target.value)
+  }
+  
+  const onSearch = () => {
+  }  
+  
   return (
     <nav className="nav">
       <Link to="/" className="nav-item">
@@ -11,7 +19,15 @@ const NavBar = ({videos}) => {
       <Link to="/upload" className="nav-item">
         Upload Video
       </Link>
-      <SearchBar className="nav-item"/>
+      <div className="search-bar">
+          <input 
+            onChange = {(e) => onChange(e)}
+            type="text" 
+            placeholder="Search a video..." 
+            ref={searchTermRef}
+          />
+          <button onClick={()=>onSearch()}>Search</button>
+        </div>
     </nav>
   )
 }

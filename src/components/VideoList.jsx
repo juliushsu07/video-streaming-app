@@ -1,16 +1,14 @@
 import React from 'react'
 import VideoDetail from "./VideoDetail"
 
-const VideoList = ({videos}) => {
-  // console.log(videos)
+const VideoList = ({videos, searchTerm}) => {  
   return (
     <div className='video-list-container'>
-        <section className=''>
-          
-        </section>
-        <section className=''>
+        <section>
             <ul>
-            {videos && videos.map(video => (
+            {videos && videos.filter((item) => {
+              return item.title.toLowerCase().includes(searchTerm.toLowerCase());
+            }).map(video => (
               <VideoDetail key={video._id} video={video}/>
             ))}
             </ul>

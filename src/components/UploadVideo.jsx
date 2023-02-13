@@ -78,17 +78,20 @@ const UploadVideo = () => {
   return (
     <div className='upload-video-container'>
       <form ref={form} onSubmit={submitVideo}>
-        <Dropzone 
-          onDrop={onDrop}
-          required 
-        >
+        {filePath? (
+          <video controls>
+            <source src={`http://localhost:4000/${filePath}`}/>
+          </video>
+        ) : (
+          <Dropzone onDrop={onDrop} required>
           {({getRootProps, getInputProps}) => (
               <div className='dropzone' {...getRootProps()}>
                 <input {...getInputProps()} />
                 <p>Drag 'n' drop some files here, or click to select files</p>
               </div>
           )}
-        </Dropzone>
+          </Dropzone>
+        )}
 
         <h5>Video Title</h5>
         <input 

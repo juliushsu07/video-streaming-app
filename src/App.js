@@ -7,6 +7,8 @@ import axios from "axios"
 
 function App() {
   const [videos, setVideos] = useState()
+  const [searchTerm, setSearchTerm] = useState('');
+
   useEffect(() => {
     axios.get('/api/videos')
     .then((res) => {
@@ -18,10 +20,10 @@ function App() {
 
   return (
     <div className="container">
-      <NavBar videos={videos} />
+      <NavBar searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
         <Routes>
-          <Route path="/" element={<Home videos={videos} />} />
-          <Route path="/upload" element={<UploadVideo videos={videos} setVideos={setVideos} />} />
+          <Route path="/" element={<Home videos={videos} searchTerm={searchTerm} />} />
+          <Route path="/upload" element={<UploadVideo />} />
         </Routes>
     </div>
   );
